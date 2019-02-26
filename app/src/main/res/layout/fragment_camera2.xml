@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_layout"
+    android:background="#000">
+
+    <com.techv.cameraincenter.ScalingTextureView
+        android:id="@+id/texture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/capture_button_container"/>
+
+    <!-- OverLay -->
+    <RelativeLayout
+        android:id="@+id/camera_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:visibility="visible">
+
+        <View
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:background="#000" />
+
+        <View
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:background="#000" />
+
+        <View
+            android:id="@+id/left"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/top"
+            android:layout_gravity="center"
+            android:background="#000" />
+
+        <View
+            android:id="@+id/right"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/top"
+            android:layout_gravity="center"
+            android:background="#000" />
+
+        <View
+            android:id="@+id/centerRectangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bottom"
+            android:layout_below="@id/top"
+            android:layout_gravity="center"
+            android:layout_toStartOf="@+id/right"
+            android:layout_toEndOf="@+id/left"
+            android:background="@drawable/bg_red" />
+
+    </RelativeLayout>
+
+    <!-- Switch Orientation Button -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="1dp"
+        android:layout_marginTop="40dp"
+        android:id="@+id/switch_orientation_container"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:background="@drawable/circle_white">
+
+            <ImageButton
+                android:id="@+id/switch_orientation"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/cam_grey_circle_selector"
+                android:padding="@dimen/cam_content_inset_secondary"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_switch_camera_orient"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- Capture Stillshot Button -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        android:background="@drawable/circle_opaque"
+        android:id="@+id/capture_button_container">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:background="@drawable/circle_white"
+            android:layout_centerInParent="true"
+            android:id="@+id/capture_button_secondary_container">
+
+            <ImageButton
+                android:id="@+id/stillshot"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/cam_circle_selector"
+                android:padding="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/cam_action_stillshot"
+                tools:ignore="ContentDescription"
+                />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
